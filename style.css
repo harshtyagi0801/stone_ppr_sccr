@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: sans-serif;
   letter-spacing: 0.1em;
 }
 body {
@@ -139,31 +138,33 @@ body {
   filter: drop-shadow(-1px 1px 11px rgba(255, 255, 255, 0.35));
   transition: all 0.01s ease-in-out;
 }
-#scissor {
+ #paper  {
   position: relative;
   left: 340px;
   bottom: 207px;
 }
-.scissor-div {
-  border: 16px solid #bd00ff;
+.paper-div{
+  
+  border: 16px solid #ffa943;
 }
-#scissor:hover {
-  border: 10px solid #bd00ff;
+ #paper:hover {
+  border: 10px solid #ffa943;
   box-shadow: none;
   filter: drop-shadow(-1px 1px 11px rgba(255, 255, 255, 0.35));
   transition: all 0.01s ease-in-out;
 }
-#paper {
+#scissor{
   transform: rotate(5.27deg);
   position: relative;
   bottom: 261px;
   left: 465px;
 }
-.paper-div {
-  border: 16px solid #ffa943;
+.scissor-div  {
+    border: 16px solid #bd00ff;
 }
-#paper:hover {
-  border: 10px solid #ffa943;
+#scissor:hover {
+ 
+  border: 10px solid #bd00ff;
   box-shadow: none;
   filter: drop-shadow(-1px 1px 11px rgba(255, 255, 255, 0.35));
   transition: all 0.01s ease-in-out;
