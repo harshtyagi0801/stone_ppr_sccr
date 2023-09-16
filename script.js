@@ -95,7 +95,7 @@ function computerPicked() {
 }
 
 function setImg(picked) {
-  let img = `<img src="./images/${picked}.png" alt=${picked} width="60px"/>`;
+  let img = `<img src="${picked}.png" alt=${picked} width="60px"/>`;
   return img;
 }
 
