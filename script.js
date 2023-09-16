@@ -95,7 +95,7 @@ function computerPicked() {
 }
 
 function setImg(picked) {
-  let img = `<img src="${picked}.png" alt=${picked} width="60px"/>`;
+  let img = `<img src="./images/${picked}.png" alt=${picked} width="60px"/>`;
   return img;
 }
 
@@ -124,6 +124,7 @@ function setStyles() {
 
 // ================================================================| GAME START |==========================================================================
 
+
 const startGame = (userPicked) => {
 
   let pcPicked = computerPicked();
@@ -150,9 +151,9 @@ const startGame = (userPicked) => {
 
   } 
   else if (
-    (userPicked === "rock" && pcPicked === "scissors") ||
-    (userPicked === "paper" && pcPicked === "rock") ||
-    (userPicked === "scissors" && pcPicked === "paper")
+    (userPicked === "rock" && pcPicked === "scissor") ||
+    (userPicked === "scissor" && pcPicked === "paper") ||
+    (userPicked === "paper" && pcPicked === "rock")
   ) {
     res = result.WIN;
 
