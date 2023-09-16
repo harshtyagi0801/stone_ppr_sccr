@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
-  letter-spacing: 0.1em;
+  font-family:sans-serif;
+  letter-spacing: 2px;
 }
 body {
   background-color: #8cc461;
@@ -20,7 +20,7 @@ body {
 /* ===================================================================| SCORE BOARD |======================================================================================== */
 
 .score-board {
-  margin-top: 3rem;
+  margin-top: 48px;
   border: 2px solid #ffff;
   border-radius: 13px;
   width: 60%;
@@ -31,28 +31,27 @@ body {
 .text-box {
   flex: 1;
   color: #ffff;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 500;
-
   text-transform: uppercase;
-  margin-left: 1rem;
+  margin-left: 16px;
 }
 
 .score {
   background: #ffffff;
   border-radius: 9px;
   width: 130px;
-  padding: 0.5rem;
-  margin: 1rem 0;
+  padding: 8px;
+  margin: 16px 0px;
   text-align: center;
   text-transform: uppercase;
 }
 .computer {
-  margin-right: 1rem;
+  margin-right: 16px;
 }
 
 .you {
-  margin-right: 1rem;
+  margin-right: 16px;
 }
 .computer > p,
 .you > p {
@@ -63,7 +62,7 @@ body {
 .computer > span,
 .you > span {
   color: #252525;
-  font-size: 3.5rem;
+  font-size: 50px;
   font-weight: 700;
 }
 
@@ -209,15 +208,15 @@ body {
   border-radius: 50%;
 }
 .winner-box-3 {
-  padding: 2rem;
+  padding: 30px;
   background-color: #289a27;
 }
 .winner-box-2 {
-  padding: 2rem;
+  padding: 30px;
   background-color: #32a62f;
 }
 .winner-box-1 {
-  padding: 1.5rem;
+  padding: 25px;
   background: #66b248;
   box-shadow: 0px 1px 62px rgba(0, 0, 0, 0.13);
 }
@@ -256,10 +255,9 @@ body {
   border: 2px solid #ffff;
   font-size: 18px;
   font-weight: 500;
-  padding: 0.6rem 1.5rem;
+  padding: 10px 25px;
   border-radius: 8px;
   text-transform: uppercase;
-
   cursor: pointer;
 }
 .btn:hover {
@@ -275,15 +273,15 @@ body {
   border-radius: 9px;
   font-size: 17px;
   font-weight: 500;
-  padding: 0.6rem 1.8rem;
+  padding: 10px 25px;
   border-radius: 8px;
   text-transform: uppercase;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 .large {
   font-size: 18px !important;
-  padding: 0.8rem 1.8rem !important;
+  padding: 14px 30px !important;
 }
 .filled-btn:hover {
   background-color: transparent;
@@ -295,12 +293,12 @@ body {
   display: block;
 }
 #replay {
-  padding: 0.5rem 1.8rem !important;
+  padding: 8px 14px !important;
   display: none;
 }
 #next-btn {
   display: none;
-  margin-left: 0.6rem;
+  margin-left: 10px;
 }
 
 /* ===================================================================|  RULES MODAL  |======================================================================================== */
@@ -315,7 +313,7 @@ body {
   background-color: #004429;
   border: 7px solid #ffffff;
   border-radius: 13px;
-  padding: 1.8rem;
+  padding: 30px;
   z-index: 7;
   display: none;
   
@@ -342,19 +340,19 @@ body {
   background-color: #dd0303;
 }
 #rules-modal h3 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-size: 25px;
   text-align: center;
 }
 .rules li svg {
   margin-right: 7px;
 }
 .rules li {
-  font-size: 0.8rem;
+  font-size: 14px;
   list-style: none;
   text-align: left;
-  margin-bottom: 0.6rem;
-  letter-spacing: 0.008em;
+  margin-bottom:10px;
+  letter-spacing: 2px;
   text-align: justify;
   z-index: 4;
 }
@@ -372,8 +370,6 @@ right:25px ;
 }
 
 
-/* ===================================================================|  WON GAME  |======================================================================================== */
-
 .won-game {
   background-color: #8cc461;
   width: 100%;
@@ -390,18 +386,18 @@ right:25px ;
 }
 .won-game-heading {
   font-weight: 600;
-  font-size: 6rem;
+  font-size: 110px;
 }
 .won-game-sub-heading {
   font-weight: 500;
-  font-size: 2.7rem;
-  margin-bottom: 1rem;
+  font-size: 40px;
+  margin-bottom: 16px;
 }
 #stars {
   position: absolute;
   top: 40px;
 }
 #trophy {
-  margin-top: 5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 80px;
+  margin-bottom: 25px;
 }
