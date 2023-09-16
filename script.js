@@ -1,45 +1,44 @@
 //----------------Buttons-------------------------------------
-const rulesBtn = document.querySelectorAll(".rules-btn");
-const nextBtn = document.getElementById("next-btn");
-const playAgainBtn = document.querySelector("#play-again");
-const replayBtn = document.querySelector("#replay");
-const closeModalBtn = document.getElementById("close");
+const ruleBTN = document.querySelectorAll(".rules-btn");
+const nxtBTN = document.getElementById("next-btn");
+const plyagnBTN = document.querySelector("#play-again");
+const rplyBTN = document.querySelector("#replay");
+const closeBTN = document.getElementById("close");
 
 //---------------Rules Modal-----------------------------------
-const rulesModal = document.getElementById("rules-modal");
+const rules = document.getElementById("rules-modal");
 
 //----------------Won Game-------------------------------------
-const wonGame = document.querySelector(".won-game");
+const win = document.querySelector(".won-game");
 
 //----------------Play Board-----------------------------------
-const playBoard = document.getElementById("play-board");
+const plybord = document.getElementById("play-board");
 
 //---------------ResultBoard-----------------------------------
-const resultBoard = document.getElementById("result-board");
-const userResult = document.querySelector(".user-result");
-const pcResult = document.querySelector(".pc-result");
+const rsltbord = document.getElementById("result-board");
+const usrRslt = document.querySelector(".user-result");
+const compRsult = document.querySelector(".pc-result");
 let resultText = document.getElementById("result-text-1");
 let resultText2 = document.getElementById("result-text-2");
-let picked = document.querySelectorAll(".picked");
+let select = document.querySelectorAll(".picked");
 
 // ------------------ Score Board-------------------------------
-const computerScore = document.getElementById("computer-score");
+const cmptrScore = document.getElementById("computer-score");
 const userScore = document.getElementById("user-score");
 
-// =============================================================================| SCORE |==================================================================================
+// ========| SCORE |=======================================
 
 let score = {
   user: 0,
   computer: 0,
 };
 
-// LOCAL STORAGE -- GET SCORE
 if (localStorage.getItem("score")) {
   score = JSON.parse(localStorage.getItem("score"));
 }
 
 userScore.innerHTML = score.user;
-computerScore.innerHTML = score.computer;
+cmptrScore.innerHTML = score.computer;
 
 
 // -------------------- RESULT ------------------------------
@@ -50,43 +49,40 @@ const result = {
   TIEUP: "TIE UP",
 };
 
-// =========================================================================| EVENT LISTENERS |=============================================================================
+// ==============| EVENT LISTENERS |=============================================================================
 
 
-rulesBtn.forEach((element) => {
+ruleBTN.forEach((element) => {
   element.addEventListener("click", () => {
-    rulesModal.style.display = "block";
+    rules.style.display = "block";
   });
 });
 
-closeModalBtn.addEventListener("click", () => {
-  rulesModal.style.display = "none";
+closeBTN.addEventListener("click", () => {
+  rules.style.display = "none";
 });
 
-nextBtn.addEventListener("click", () => {
-  playBoard.style.display = "none";
-  resultBoard.style.display = "none";
-  wonGame.style.display = "flex";
+nxtBTN.addEventListener("click", () => {
+  plybord.style.display = "none";
+  rsltbord.style.display = "none";
+  win.style.display = "flex";
 });
 
-playAgainBtn.addEventListener("click", playAgain);
+plyagnBTN.addEventListener("click", playAgain);
 
-replayBtn.addEventListener("click", playAgain);
+rplyBTN.addEventListener("click", playAgain);
 
 
-// =========================================================================| FUNCTIONS |=============================================================================
+// ================fun=============================
 
 
 function playAgain() {
-  playBoard.style.display = "grid";
-  resultBoard.style.display = "none";
-  wonGame.style.display = "none";
-  nextBtn.style.display = "none";
+  plybord.style.display = "grid";
+  rsltbord.style.display = "none";
+  win.style.display = "none";
+  nxtBTN.style.display = "none";
 }
 
-
-
-// computer Picks
 const computer = ["rock", "paper", "scissor"];
 
 function computerPicked() {
@@ -95,34 +91,70 @@ function computerPicked() {
 }
 
 function setImg(picked) {
-  let img = `<img src="./images/${picked}.png" alt=${picked} width="60px"/>`;
+  let img = `<img src="${picked}.png" alt=${picked} width="60px"/>`;
   return img;
 }
 
 function setStyles() {
 
-  resultBoard.style.marginTop = "3rem";
+  rsltbord.style.marginTop = "48px";
 
-  picked.forEach((element) => {
+  select.forEach((element) => {
     element.style.top = "300px";
   });
 
   for (let index = 0; index < 3; index++) {
-    userResult.classList.remove("rock-div");
-    userResult.classList.remove("paper-div");
-    userResult.classList.remove("scissor-div");
-    pcResult.classList.remove("rock-div");
-    pcResult.classList.remove("paper-div");
-    pcResult.classList.remove("scissor-div");
-
-    playAgainBtn.style.display = "block";
+    usrRslt.classList.remove("rock-div");
+    usrRslt.classList.remove("paper-div");
+    usrRslt.classList.remove("scissor-div");
+    compRsult.classList.remove("rock-div");
+    compRsult.classList.remove("paper-div"); 
+    compRsult.classList.remove("scissor-div");
+    plyagnBTN.style.display = "block";
     resultText2.style.display = "block";
-    replayBtn.style.display = "none";
-    nextBtn.style.display = "none";
+    rplyBTN.style.display = "none";
+    nxtBTN.style.display = "none";
   }
 }
+// -----------------------winbox---------------------
+let winubox1 = document.querySelector(".user-box-1");
+let winubox2 = document.querySelector(".user-box-2");
+let winubox3 = document.querySelector(".user-box-3");
+let wincombox1 = document.querySelector(".pc-box-1");
+let wincombox2 = document.querySelector(".pc-box-2");
+let wincombox3 = document.querySelector(".pc-box-3");
 
-// ================================================================| GAME START |==========================================================================
+let focusOnUserWinner = () => {
+  wincombox1.classList.remove("winner-box-1");
+  wincombox2.classList.remove("winner-box-2");
+  wincombox3.classList.remove("winner-box-3");
+
+  winubox1.classList.add("winner-box-1");
+  winubox2.classList.add("winner-box-2");
+  winubox3.classList.add("winner-box-3");
+};
+let focusOnPCWinner = () => {
+  winubox1.classList.remove("winner-box-1");
+  winubox2.classList.remove("winner-box-2");
+  winubox3.classList.remove("winner-box-3");
+
+  wincombox1.classList.add("winner-box-1");
+  wincombox2.classList.add("winner-box-2");
+  wincombox3.classList.add("winner-box-3");
+};
+
+let removeFocus = () => {
+  winubox1.classList.remove("winner-box-1");
+  winubox2.classList.remove("winner-box-2");
+  winubox3.classList.remove("winner-box-3");
+
+  wincombox1.classList.remove("winner-box-1");
+  wincombox2.classList.remove("winner-box-2");
+  wincombox3.classList.remove("winner-box-3");
+};
+
+
+// ===================== START ================================
 
 
 const startGame = (userPicked) => {
@@ -139,15 +171,15 @@ const startGame = (userPicked) => {
 
     removeFocus();
 
-    playAgainBtn.style.display = "none";
-    replayBtn.style.display = "block";
+    plyagnBTN.style.display = "none";
+    rplyBTN.style.display = "block";
     resultText2.style.display = "none";
 
-    picked.forEach((element) => {
+    select.forEach((element) => {
       element.style.top = "256px";
     });
 
-    resultBoard.style.marginTop = "6rem";
+    rsltbord.style.marginTop = "6rem";
 
   } 
   else if (
@@ -157,11 +189,11 @@ const startGame = (userPicked) => {
   ) {
     res = result.WIN;
 
-    nextBtn.style.display = "block";
+    nxtBTN.style.display = "block";
 
     focusOnUserWinner();
 
-    // UPDATE SCORE -- USER WINS
+    // updte win
     score.user++;
 
   } 
@@ -170,65 +202,28 @@ const startGame = (userPicked) => {
 
     focusOnPCWinner();
 
-    // UPDATE SCORE -- USER LOST
+    // Update loss
     score.computer++;
 
   }
-  playBoard.style.display = "none";
-  resultBoard.style.display = "flex";
+  plybord.style.display = "none";
+  rsltbord.style.display = "flex";
 
-  // RESULT BOARD 
-  userResult.classList.add(`${userPicked}-div`);
-  pcResult.classList.add(`${pcPicked}-div`);
-  userResult.innerHTML = setImg(userPicked);
-  pcResult.innerHTML = setImg(pcPicked);
+  // rsult
+  usrRslt.classList.add(`${userPicked}-div`);
+  compRsult.classList.add(`${pcPicked}-div`);
+  usrRslt.innerHTML = setImg(userPicked);
+  compRsult.innerHTML = setImg(pcPicked);
   resultText.innerHTML = res;
 
-  // SCORE BOARD
   userScore.innerHTML = score.user;
-  computerScore.innerHTML = score.computer;
+  cmptrScore.innerHTML = score.computer;
   
-  // SAVING SCORE IN LOCAL STRORAGE
+  
   localStorage.setItem("score", JSON.stringify(score));
 };
 
-// ================================================================| GAME END |==========================================================================
+// =====================END ===========================
 
 
-// Winner Focus Boxes
 
-let winUserBox1 = document.querySelector(".user-box-1");
-let winUserBox2 = document.querySelector(".user-box-2");
-let winUserBox3 = document.querySelector(".user-box-3");
-let winPcBox1 = document.querySelector(".pc-box-1");
-let winPcBox2 = document.querySelector(".pc-box-2");
-let winPcBox3 = document.querySelector(".pc-box-3");
-
-let focusOnUserWinner = () => {
-  winPcBox1.classList.remove("winner-box-1");
-  winPcBox2.classList.remove("winner-box-2");
-  winPcBox3.classList.remove("winner-box-3");
-
-  winUserBox1.classList.add("winner-box-1");
-  winUserBox2.classList.add("winner-box-2");
-  winUserBox3.classList.add("winner-box-3");
-};
-let focusOnPCWinner = () => {
-  winUserBox1.classList.remove("winner-box-1");
-  winUserBox2.classList.remove("winner-box-2");
-  winUserBox3.classList.remove("winner-box-3");
-
-  winPcBox1.classList.add("winner-box-1");
-  winPcBox2.classList.add("winner-box-2");
-  winPcBox3.classList.add("winner-box-3");
-};
-
-let removeFocus = () => {
-  winUserBox1.classList.remove("winner-box-1");
-  winUserBox2.classList.remove("winner-box-2");
-  winUserBox3.classList.remove("winner-box-3");
-
-  winPcBox1.classList.remove("winner-box-1");
-  winPcBox2.classList.remove("winner-box-2");
-  winPcBox3.classList.remove("winner-box-3");
-};
