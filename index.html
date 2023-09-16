@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stone Paper Scissor</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="parent-container">
-<!-- ===========================| SCORE BOARD |=========================================================================== -->
+<!-- ============================================================================| SCORE BOARD |=========================================================================== -->
 
       <div class="score-board">
         
@@ -28,13 +28,12 @@
             Your<br />
             Score
           </p>
-
           <span id="user-score">0</span>
         </div>
 
       </div>
 
-  <!-- ==========================| PLAY BOARD |================================= -->
+  <!-- ============================================================================| PLAY BOARD |=========================================================================== -->
 
       <div id="play-board">
 
@@ -46,17 +45,17 @@
 
         <div class="actions">
           <div class="rock-div action" id="rock" onclick="startGame('rock')">
-            <img src="rock.png" alt="rock" width="65px" />
+            <img src="./images/rock.png" alt="rock" width="65px" />
           </div>
 
           <div class="paper-div action" id="paper" onclick="startGame('paper')">
-            <img src="paper.png" alt="paper" width="65px" />
+            <img src="./images/paper.png" alt="paper" width="65px" />
           </div>
           <div class="scissor-div action"
             id="scissor"
             onclick="startGame('scissor')"
           >
-            <img src="scissor.png" alt="scissor" width="50px" />
+            <img src="./images/scissor.png" alt="scissor" width="50px" />
           </div>
         </div>
 
@@ -189,8 +188,8 @@
 <!-- ============================================================================| WON GAME |=========================================================================== -->
 
     <section class="won-game">
-      <img src="Stars.png" alt="stars" id="stars" />
-      <img src="VT.png" alt="VectorTrophy" id="trophy" />
+      <img src="./images/Group 5Stars.png" alt="stars" id="stars" />
+      <img src="./images/VectorTrophy.png" alt="VectorTrophy" id="trophy" />
       <h2 class="won-game-heading">HURRAY!!</h2>
       <h6 class="won-game-sub-heading">YOU WON THE GAME</h6>
       <button class="filled-btn large" onclick="playAgain()">play again</button>
@@ -199,6 +198,6 @@
       </div>
     </section>
 
-    <script src="./script.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
