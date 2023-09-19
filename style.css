@@ -17,8 +17,7 @@ body {
   flex-direction: column;
 }
 
-
-/* ========================score==================================== */
+/* =-------------score------------------------- */
 
 .sb {
   margin-top: 48px;
@@ -72,6 +71,9 @@ body {
   font-size: 50px;
   font-weight: 700;
 }
+
+
+
 #play-board {
   display: grid;
   place-items: center;
@@ -79,7 +81,7 @@ body {
   position: fixed;
   top: 50%;
 }
-/* ---------------------------------tringle---------------------------------------- */
+/* ----------------------------------triange----------------------------------------------- */
 
 .line {
   width: 260px;
@@ -99,6 +101,7 @@ body {
   right: 54px;
   top: 104px;
 }
+/* ---------------------------act--------------------------------------------- */
 .actions {
   position: relative;
   right: 130%;
@@ -172,6 +175,40 @@ body {
   transition: all 0.01s ease-in-out;
 }
 
+/* =======================rsult========================================= */
+
+#result-board {
+  width: 60%;
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  display: none;
+}
+.result {
+  text-align: center;
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+}
+.result-img {
+  width: 180px !important;
+  height: 180px !important ;
+}
+#result-text-1 {
+  font-size: 40px;
+}
+#result-text-2 {
+  font-size: 25px;
+}
+/* ----------------winnerbox---------------------------- */
+
 
 .boxes {
   border-radius: 50%;
@@ -189,6 +226,7 @@ body {
   background: #66b248;
   box-shadow: 0px 1px 62px rgba(0, 0, 0, 0.13);
 }
+
 .picked {
   position: absolute;
   z-index: 1;
@@ -204,7 +242,7 @@ body {
   align-items: center;
 }
 
-/* ======================btn============================ */
+/* ========================btns============================= */
 
 .buttons {
   position: absolute;
@@ -267,19 +305,19 @@ body {
   margin-left: 10px;
 }
 
-/* =================rule===================================== */
+/* ====================rule=========================================== */
 
 #rules-modal {
   position: absolute;
   right: 40px;
   bottom: 80px;
-  border: 3px solid orange;
-  width: 290px;
+  border: 3px solid darkorange;
+  width: 297px;
   color: #ffff;
   background-color: #004429;
   border: 7px solid #ffffff;
   border-radius: 13px;
-  padding: 30px;
+  padding: 22px;
   z-index: 7;
   display: none;
   
@@ -321,38 +359,6 @@ body {
   letter-spacing: 2px;
   text-align: justify;
   z-index: 4;
-}
-/* =========================rslt============================ */
-
-#result-board {
-  width: 60%;
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
-  display: none;
-}
-.result {
-  text-align: center;
-  font-weight: 800;
-  font-size: 19px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #ffffff;
-}
-.result-img {
-  width: 180px !important;
-  height: 180px !important ;
-}
-#result-text-1 {
-  font-size: 40px;
-}
-#result-text-2 {
-  font-size: 25px;
 }
 
 
@@ -398,4 +404,3 @@ right:25px ;
   margin-top: 80px;
   margin-bottom: 25px;
 }
-
